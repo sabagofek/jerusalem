@@ -1,0 +1,268 @@
+﻿<html>
+	<head>
+		<title>BWG Simulator</title>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300"
+		 rel="stylesheet">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<style>
+html, body {
+	margin: 0px;	padding: 0px;	font-size: 16px;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+#itemView {
+text-align: left;
+    background: rgba(14, 13, 66, 0.7);
+    font-size: 12px;
+    font-family: Arial;
+    color: #fff;
+    border: none;
+    line-height: 1;
+    padding: 5px;
+    border: 1px solid #fff;
+    outline: 1px solid rgba(14, 13, 66, 0.7);
+}
+cat {
+color: #ffeecc;
+    font-family: Tahoma;
+    font-size: 10px;
+}
+dog {
+    font-family: Tahoma;
+    font-size: 10px;
+}
+		</style>
+	</head>
+	<body>
+			<center>
+<br />
+<table id="itemView">
+	<tbody>
+	<tr>
+		<td colspan="12">
+			<img src="http://poof.ml/static/tooltip/Dot.0.png"> 
+			<b><span id="itemviewname">Brown Work Gloves <span id="success"></span></span></b>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="4" style="text-align: center;">
+			<img src="https://poof.ml/static/images/equip/1082149.png">
+		</td>
+		<td colspan="8">
+			<img src="http://poof.ml/static/tooltip/Can.reqLEV.png"> 
+			<img src="http://poof.ml/static/tooltip/Can.1.png" style="padding-right: 1px;">
+			<img src="http://poof.ml/static/tooltip/Can.0.png" style="padding-right: 1px;"> 
+			<br>
+			<img src="http://poof.ml/static/tooltip/Can.reqSTR.png"> 
+			<img src="http://poof.ml/static/tooltip/Can.0.png" style="padding-right: 1px;"> 
+			<br>
+			<img src="http://poof.ml/static/tooltip/Can.reqDEX.png"> 
+			<img src="http://poof.ml/static/tooltip/Can.0.png" style="padding-right: 1px;"> 
+			<br>
+			<img src="http://poof.ml/static/tooltip/Can.reqINT.png"> 
+			<img src="http://poof.ml/static/tooltip/Can.0.png" style="padding-right: 1px;"> 
+			<br>
+			<img src="http://poof.ml/static/tooltip/Can.reqLUK.png"> 
+			<img src="http://poof.ml/static/tooltip/Can.0.png" style="padding-right: 1px;"> 
+			<br>
+			<img src="http://poof.ml/static/tooltip/Can.reqPOP.png"> 
+			<img src="http://poof.ml/static/tooltip/Can.none.png">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="http://poof.ml/static/tooltip/Can.beginner.png" style="padding: 1px;">
+		</td>
+		<td colspan="2">
+			<img src="http://poof.ml/static/tooltip/Can.warrior.png" style="padding: 1px;">
+		</td>
+		<td colspan="2">
+			<img src="http://poof.ml/static/tooltip/Can.magician.png" style="padding: 1px;">
+		</td>
+		<td colspan="2">
+			<img src="http://poof.ml/static/tooltip/Can.bowman.png" style="padding: 1px;">
+		</td>
+		<td colspan="2">
+			<img src="http://poof.ml/static/tooltip/Can.thief.png" style="padding: 1px;">
+		</td>
+		<td colspan="2">
+			<img src="http://poof.ml/static/tooltip/Can.pirate.png" style="padding: 1px;">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="12">
+			<img src="http://poof.ml/static/tooltip/line.png">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="12">
+			<img src="http://poof.ml/static/tooltip/Dot.1.png"> 
+			<cat>CATEGORY : </cat> 
+			<dog><span id="itemviewoption">GLOVES</span></dog>
+			<br>
+			<img src="http://poof.ml/static/tooltip/Dot.1.png"> 
+			<cat>WEAPON ATTACK :</cat> 
+			<dog><b><span id="att"></span></b></dog>
+			<br>
+			<img src="http://poof.ml/static/tooltip/Dot.1.png"> 
+			<cat>NUMBER OF UPGRADES AVAILABLE :</cat> 
+			<dog><b><span id="slot"></span></b></dog>
+		</td>
+	</tr>
+	</tbody>
+</table>
+<br />
+<table border="1">
+	<tr>
+		<td align="center" style="font-size: 14px; padding: 10px;">
+			<img src="https://poof.ml/static/images/use/2040805.png"><br />
+			Success rate: 10%,<br /> weapon att. +3<br /><br /><br />
+			<button onclick="s10()">DO</button>
+		</td>
+		<td align="center" style="font-size: 14px; padding: 10px;">
+			<img src="https://poof.ml/static/images/use/2040809.png"><br />
+			Success rate: 30%,<br /> weapon att. +3<br />
+			If failed, the item will be destroyed at a 50% rate.<br /><br />
+			<button onclick="s30()">DO</button>
+		</td>
+		<td align="center" style="font-size: 14px; padding: 10px;">
+			<img src="https://poof.ml/static/images/use/2040804.png"><br />
+			Success rate: 60%,<br /> weapon att. +2<br /><br /><br />
+			<button onclick="s60()">DO</button>
+		</td>
+		<td align="center" style="font-size: 14px; padding: 10px;">
+			<img src="https://poof.ml/static/images/use/2040810.png"><br />
+			Success rate: 70%,<br /> weapon att. +2<br />
+			If failed, the item will be destroyed at a 50% rate.<br /><br />
+			<button onclick="s70()">DO</button>
+		</td>
+		<td align="center" style="font-size: 14px; padding: 10px;">
+			<img src="https://poof.ml/static/images/use/2040803.png"><br />
+			Success rate: 100%,<br /> weapon att. +1<br /><br /><br />
+			<button onclick="s100()">DO</button>
+		</td>
+	</tr>
+</table>
+<br />
+<b>Status:</b> <span id="status"></span>
+			</center>
+		<script>
+var slot = 7;
+$("#slot").text(slot);
+
+var att = 0;
+$("#att").text(att);
+
+var success = 0;
+var chance = 0;
+
+function s10() {
+	if(slot !== 0) {
+	chance = Math.floor((Math.random() * 100) + 1);
+	if(chance <= 10) {
+		slot--;	att+=3;
+		$("#slot").text(slot);
+		$("#att").text(att);
+		success++;
+		$("#success").text('(+'+ success + ')');
+		$("#status").text('The scroll lights up, and then its mysterious power has been transferred to the item.');
+	}
+	else {
+		slot--;
+		$("#slot").text(slot);
+		$("#status").text('The scroll lights up, but the item winds up as if nothing happened.');
+	}
+	}
+}
+function s30() {
+	if(slot !== 0) {
+	chance = Math.floor((Math.random() * 100) + 1);
+	if(chance <= 30) {
+		slot--;	att+=3;
+		$("#slot").text(slot);
+		$("#att").text(att);
+		success++;
+		$("#success").text('(+'+ success + ')');
+		$("#status").text('The scroll lights up, and then its mysterious power has been transferred to the item.');
+	}
+	else {
+		chance = Math.floor((Math.random() * 100) + 1);
+		if(chance <= 50) {
+			slot--;
+			$("#slot").text(slot);
+			$("#status").text('The scroll lights up, but the item winds up as if nothing happened.');
+		}
+		else {
+			slot = 7;
+			att = 0;
+			$("#slot").text(slot);
+			$("#att").text(att);
+			success=0;
+			$("#success").text('');
+			$("#status").text('This item is destroyed due to the overwhelming power of the scroll.');
+		}	
+	}
+	}
+}
+function s60() {
+	if(slot !== 0) {
+	chance = Math.floor((Math.random() * 100) + 1);
+	if(chance <= 60) {
+		slot--;	att+=2;
+		$("#slot").text(slot);
+		$("#att").text(att);
+		success++;
+		$("#success").text('(+'+ success + ')');
+		$("#status").text('The scroll lights up, and then its mysterious power has been transferred to the item.');
+	}
+	else {
+		slot--;
+		$("#slot").text(slot);
+		$("#status").text('The scroll lights up, but the item winds up as if nothing happened.');
+	}
+	}
+}
+function s70() {
+	if(slot !== 0) {
+	chance = Math.floor((Math.random() * 100) + 1);
+	if(chance <= 70) {
+		slot--;	att+=2;
+		$("#slot").text(slot);
+		$("#att").text(att);
+		success++;
+		$("#success").text('(+'+ success + ')');
+		$("#status").text('The scroll lights up, and then its mysterious power has been transferred to the item.');
+	}
+	else {
+		chance = Math.floor((Math.random() * 100) + 1);
+		if(chance <= 50) {
+			slot--;
+			$("#slot").text(slot);
+			$("#status").text('The scroll lights up, but the item winds up as if nothing happened.');
+		}
+		else {
+			slot = 7;
+			att = 0;
+			$("#slot").text(slot);
+			$("#att").text(att);
+			success=0;
+			$("#success").text('');
+			$("#status").text('This item is destroyed due to the overwhelming power of the scroll.');
+		}	
+	}
+	}
+}
+function s100() {
+	if(slot !== 0) {
+		slot--;	att+=1;
+		$("#slot").text(slot);
+		$("#att").text(att);
+		success++;
+		$("#success").text('(+'+ success + ')');
+		$("#status").text('The scroll lights up, and then its mysterious power has been transferred to the item.');
+	}
+}
+		</script>
+	</body>
+</html>
